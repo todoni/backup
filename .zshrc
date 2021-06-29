@@ -111,6 +111,4 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias vi="nvim"
 alias vimdiff="nvim -d"
 export EDITOR=/usr/local/bin/nvim
-alias python=~/myutils/homebrew/bin/python3.9
-alias pip=~/myutils/homebrew/bin/pip3.9
 

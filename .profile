@@ -1,1 +1,1 @@
-export PATH=~/homebrew/bin:$PATH
+export PATH=~/myutils/homebrew/bin:$PATH
