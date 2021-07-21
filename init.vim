@@ -12,6 +12,7 @@ set hlsearch                    "highlight searching result
 set ignorecase                  "ignore Case sensitive when searching
 set showmatch                   "highlight matched bracket ()
 set wrap
+set fileencodings=uft-8
 
 "================================= Optional setting =================================
 set relativenumber              "show relative number from current line
@@ -31,7 +32,6 @@ set nowritebackup
 set smartindent
 set tabstop=4
 set shiftwidth=4
-set expandtab
 set autoindent
 
 "================================= Plugins ========================================
@@ -140,6 +140,12 @@ endif
 
 "--------vimspector------------
 let g:vimspector_enable_mappings = 'HUMAN'
+nmap <leader>dd :call vimspector#Launch()<CR>
+nmap <leader>dx :VimspectorReset<CR>
+nmap <Leader>di <Plug>VimspectorBalloonEval
+nmap <leader>de :VimspectorEval
+nmap <leader>dw :VimspectorWatch
+nmap <leader>do :VimspectorShowOutput
 " for normal mode - the word under the cursor
 " nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
