@@ -102,14 +102,14 @@ prompt_git() {
   local PL_BRANCH_CHAR
   () {
     local LC_ALL="" LC_CTYPE="en_US.UTF-8"
-    PL_BRANCH_CHAR=$'\ue0a0'         # 
+    PL_BRANCH_CHAR=$'\ue0a0'         # ?
   }
   local ref dirty mode repo_path
 
    if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]]; then
     repo_path=$(git rev-parse --git-dir 2>/dev/null)
     dirty=$(parse_git_dirty)
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="? $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
@@ -130,8 +130,8 @@ prompt_git() {
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' get-revision true
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:*' unstagedstr '±'
+    zstyle ':vcs_info:*' stagedstr '?'
+    zstyle ':vcs_info:*' unstagedstr '?'
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
@@ -155,7 +155,7 @@ prompt_bzr() {
     status_all=$(echo -n "$bzr_status" | head -n1 | wc -m)
     revision=$(bzr log -r-1 --log-format line | cut -d: -f1)
     if [[ $status_mod -gt 0 ]] ; then
-      prompt_segment yellow black "bzr@$revision ✚"
+      prompt_segment yellow black "bzr@$revision ?"
     else
       if [[ $status_all -gt 0 ]] ; then
         prompt_segment yellow black "bzr@$revision"
@@ -174,30 +174,30 @@ prompt_hg() {
       if [[ $(hg prompt "{status|unknown}") = "?" ]]; then
         # if files are not added
         prompt_segment red white
-        st='±'
+        st='?'
       elif [[ -n $(hg prompt "{status|modified}") ]]; then
         # if any modification
         prompt_segment yellow black
-        st='±'
+        st='?'
       else
         # if working copy is clean
         prompt_segment green $CURRENT_FG
       fi
-      echo -n $(hg prompt "☿ {rev}@{branch}") $st
+      echo -n $(hg prompt "? {rev}@{branch}") $st
     else
       st=""
       rev=$(hg id -n 2>/dev/null | sed 's/[^-0-9]//g')
       branch=$(hg id -b 2>/dev/null)
       if `hg st | grep -q "^\?"`; then
         prompt_segment red black
-        st='±'
+        st='?'
       elif `hg st | grep -q "^[MA]"`; then
         prompt_segment yellow black
-        st='±'
+        st='?'
       else
         prompt_segment green $CURRENT_FG
       fi
-      echo -n "☿ $rev@$branch" $st
+      echo -n "? $rev@$branch" $st
     fi
   fi
 }
@@ -222,9 +222,9 @@ prompt_virtualenv() {
 prompt_status() {
   local -a symbols
 
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}?"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}?"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}?"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
