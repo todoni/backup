@@ -100,12 +100,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-bash ~/myutils/42seoul_link_all_cache_dirs.sh
+#bash ~/myutils/42seoul_link_all_cache_dirs.sh
 USER=sohan
 export USER
 MAIL=sohan@student.42seoul.kr
 export MAIL
-source ~/.profile
+#source ~/.profile
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 alias vi="nvim"
