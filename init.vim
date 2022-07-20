@@ -14,9 +14,10 @@ set showmatch                   "highlight matched bracket ()
 set wrap
 set fileencodings=uft-8
 set ruler
+set mouse=a
 
 "================================= Optional setting =================================
-"set relativenumber              "show relative number from current line
+set relativenumber              "show relative number from current line
 set title                       "change the terminal title
 set cursorline                  "highlight cursor line
 set mouse=h                    "Enable mouse in help mode
@@ -44,7 +45,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'wakatime/vim-wakatime'            "check coding time
 Plug 'jiangmiao/auto-pairs'             "Auto pair for ',), }, ]...
-Plug 'airblade/vim-gitgutter'           "Show git status in vim
+"Plug 'airblade/vim-gitgutter'           "Show git status in vim
 Plug 'tpope/vim-fugitive'               "Git warpper
 Plug 'ctrlpvim/ctrlp.vim'               "Ctrl + P for search file
 "----- themes ---------
