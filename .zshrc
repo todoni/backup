@@ -105,9 +105,9 @@ USER=sohan
 export USER
 MAIL=sohan@student.42seoul.kr
 export MAIL
-#source ~/.profile
+source ~/.profile
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 alias vi="nvim"
 alias vimdiff="nvim -d"
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/Users/sohan/homebrew/bin/nvim
