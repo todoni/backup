@@ -33,3 +33,10 @@ brew install neovim
 brew install node
 cp ~/backup/coc-settings.json ~/.config/nvim/
 cp ~/backup/init.vim ~/.config/nvim/
+
+echo -e "\033[32;1m"\[Generate ssh key\]"\033[m"
+ssh-keygen
+cd .ssh
+cat id_rsa.pub
+
+echo -e "\033[32;1m"\[Don't forget to add ssh key to intra net!\]"\033[m"
