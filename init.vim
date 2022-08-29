@@ -21,6 +21,7 @@ set relativenumber              "show relative number from current line
 set title                       "change the terminal title
 set cursorline                  "highlight cursor line
 set mouse=h                    "Enable mouse in help mode
+set mouse=a
                                 "'a' to all mode, n, v, i, c to Normal, Visual, Insert, Command mode
 syntax sync minlines=200        "speed-up vim
 set clipboard=unnamed           "yank, paste to system clipboard
@@ -64,6 +65,8 @@ Plug 'puremourning/vimspector'
 "----- COC ----------
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Or build from source code by using yarn: https://yarnpkg.com
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
@@ -125,11 +128,11 @@ set background=dark
 "set termguicolors
 "let g:materialmonokai_italic=1
 "let g:materialmonokai_subtle_spell=1
-"colorscheme material-monokai
+colorscheme material-monokai
 "colorscheme synthwave84
 "colorscheme challenger_deep
 "colorscheme sidonia
-colorscheme bluewery
+"colorscheme bluewery
 " ----- Ctrlp ----
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']       "Ignore in .gitignore
@@ -329,3 +332,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
