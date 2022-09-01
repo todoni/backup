@@ -14,6 +14,7 @@ set showmatch                   "highlight matched bracket ()
 set wrap
 set fileencodings=uft-8
 set ruler
+set mouse=a
 
 "================================= Optional setting =================================
 set relativenumber              "show relative number from current line
@@ -46,7 +47,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'wakatime/vim-wakatime'            "check coding time
 Plug 'jiangmiao/auto-pairs'             "Auto pair for ',), }, ]...
 "Plug 'airblade/vim-gitgutter'           "Show git status in vim
-"Plug 'tpope/vim-fugitive'               "Git warpper
+Plug 'tpope/vim-fugitive'               "Git warpper
 Plug 'ctrlpvim/ctrlp.vim'               "Ctrl + P for search file
 "----- themes ---------
 Plug 'sainnhe/everforest'               "짙은청록
