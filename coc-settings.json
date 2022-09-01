@@ -4,12 +4,12 @@
             "command": "ccls",
             "filetypes": [
                 "c",
-                "cpp",
+				"cpp",
                 "objc",
                 "objcpp"
             ],
             "rootPatterns": [
-                ".ccls",
+                "*/.ccls",
                 "compile_commands.json",
                 ".vim/",
                 ".git/",
@@ -20,9 +20,12 @@
                     "directory": "/tmp/ccls"
                 },
 				"highlight": {
-					"lsRanges" : true 
+					"lsRanges" : true
+				},
+				"clang": { 
+          			"extraArgs": [ "-std=c++98", "-I", "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]	
 				}
-			}
-        }
-    }
+        	}
+    	}
+	}
 }
